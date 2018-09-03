@@ -9,13 +9,14 @@ TEX=$(SRC:.md=.tex)
 DOCX=$(SRC:.md=.docx)
 REVEALJS=$(SRC:.md=.html)
 
+revealjs:	clean $(REVEALJS)
+
 all:	$(PDFS) $(HTML) $(TEX) $(DOCX) $(REVEALJS)
 
 pdf:	clean $(PDFS)
 html:	clean $(HTML)
 tex:	clean $(TEX)
 docx:	clean $(DOCX)
-revealjs:	clean $(REVEALJS)
 mdown:	clean $(SRC)
 
 %.html:	%.md
