@@ -2,7 +2,7 @@
 # All markdown files in the working directory
 SRC = $(wildcard *.md)
 PREFIX = $(HOME)/.pandoc
-BIB = $(HOME)/static/documents/bibs/socbib-pandoc.bib
+BIB = $(XDG_DOCUMENTS_DIR)/bibs/socbib-pandoc.bib
 PDFS=$(SRC:.md=.pdf)
 HTML=$(SRC:.md=.html)
 TEX=$(SRC:.md=.tex)
