@@ -23,13 +23,11 @@ mdown:	$(SRC)
 	pandoc -w html -o $@ $< \
 		--self-contained \
 		--css=$(PREFIX)/css/pandoc.css
-		# --template=$(PREFIX)/templates/html.template
 		# --bibliography=$(BIB)
 
 %.tex:	%.md
 	pandoc -w latex -s -o $@ $< \
 		--pdf-engine=pdflatex
-		# --template=$(PREFIX)/templates/latex.template
 		# --bibliography=$(BIB)
 
 %.rjs.html:	%.md
@@ -38,13 +36,11 @@ mdown:	$(SRC)
 		--mathjax \
 		-V css=main.css \
 		-V revealjs-url=$(HOME)/.pandoc/reveal.js
-		# --template=$(PREFIX)/templates/revealjs.template
 
 %.pdf:	%.md
 	pandoc -s \
 		--pdf-engine=pdflatex -o $@ $< \
 		--bibliography=$(BIB)
-		# --template=$(PREFIX)/templates/latex.template
 
 %.docx:	%.md
 	pandoc -s -o $@ $<  #--bibliography=$(BIB)
